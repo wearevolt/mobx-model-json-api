@@ -1,0 +1,16 @@
+{
+  "name": "mobx-model-json-api",
+  "version": "0.0.1",
+  "description": "JSON API usage for mobx-model",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "mobx",
+    "mobx-model",
+    "json-api"
+  ],
+  "author": "Alexander \"Staltec\" Prozorov",
+  "license": "MIT"
+}
