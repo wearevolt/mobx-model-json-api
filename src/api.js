@@ -1,11 +1,13 @@
 import isString from 'mobx-model/node_modules/lodash/isString';
 import isArray from 'mobx-model/node_modules/lodash/isArray';
-import isFunction from 'mobx-model/node_modules/lodash/isFunction';
 import isPlainObject from 'mobx-model/node_modules/lodash/isPlainObject';
-import { API } from 'mobx-model';
+import { API } from 'mobx-model/src/index';
 
 const request = API.request;
-const config = API.config;
+const jsonApiHeaders = {
+  'Accept': 'application/vnd.api+json',
+  'Content-Type': 'application/vnd.api+json',
+};
 
 
 function encodeParam (param) {
@@ -44,27 +46,6 @@ function toQueryStr (params) {
 }
 
 
-API.config = function (options = {}) {
-
-  const headers = isFunction(options.requestHeaders)
-    ? options.requestHeaders()
-    : options.requestHeaders || {}
-    ;
-
-  config({
-    ...options,
-
-    requestHeaders: {
-      ...headers,
-      'Accept': 'application/vnd.api+json',
-      'Content-Type': 'application/vnd.api+json',
-    }
-
-  }).bind(API);
-
-};
-
-
 API.request = function (options = {}) {
   const {
     method = 'get',
@@ -91,9 +72,10 @@ API.request = function (options = {}) {
     requestParams = undefined;
   }
 
-  return request({
+  return request.call(this, {
     method,
     endpoint: endpointUrl,
+    requestHeaders: { ...this.requestHeaders, ...jsonApiHeaders },
     data: requestParams,
     superagent,
 
@@ -103,7 +85,7 @@ API.request = function (options = {}) {
 
     onError,
 
-  }).bind(API);
+  });
 };
 
 
