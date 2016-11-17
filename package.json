@@ -4,7 +4,11 @@
   "description": "JSON API usage for mobx-model",
   "main": "lib/index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha --reporter spec --compilers js:babel-core/register test/index.js",
+    "test-watch": "mocha --reporter spec --compilers js:babel-core/register test/index.js --recursive --watch",
+    "prepublish": "npm run clean && npm run build",
+    "clean": "rm -rf lib/",
+    "build": "webpack"
   },
   "keywords": [
     "mobx",
@@ -12,5 +16,15 @@
     "json-api"
   ],
   "author": "Alexander \"Staltec\" Prozorov",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mobx-model": "^0.0.28"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "webpack": "^1.13.3"
+  }
 }
