@@ -43,19 +43,15 @@ function setModelData ({ data, included=[] }) {
 
   transaction(() => {
     modelsJson.forEach(modelJson => {
-      this.__setToBaseModel({ modelJson, topLevelJson });
+      this.set({ modelJson, topLevelJson });
     });
   });
 
 }
 
 
-BaseModel.addClassAction('__setToBaseModel', BaseModel.set);
-BaseModel.addAction('__setToBaseModel', BaseModel.prototype.set);
-
-
-BaseModel.addClassAction('setFromJsonApi', setModelData);
-BaseModel.addAction('setFromJsonApi', setModelData);
+BaseModel.addClassAction('setByBody', setModelData);
+BaseModel.addAction('setByBody', setModelData);
 
 
 export default BaseModel;

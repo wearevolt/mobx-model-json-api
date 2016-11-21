@@ -12,13 +12,13 @@ describe('BaseModel', () => {
   });
 
   it("should have class action `set`", function() {
-    expect(isFunction(BaseModel.__setToBaseModel)).to.equal(true);
     expect(isFunction(BaseModel.set)).to.equal(true);
+    expect(isFunction(BaseModel.setByBody)).to.equal(true);
   });
 
   it("should have action `set`", function() {
-    expect(isFunction(BaseModel.prototype.__setToBaseModel)).to.equal(true);
     expect(isFunction(BaseModel.prototype.set)).to.equal(true);
+    expect(isFunction(BaseModel.prototype.setByBody)).to.equal(true);
   });
 
 });
