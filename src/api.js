@@ -1,7 +1,7 @@
 import isString from 'mobx-model/node_modules/lodash/isString';
 import isArray from 'mobx-model/node_modules/lodash/isArray';
 import isPlainObject from 'mobx-model/node_modules/lodash/isPlainObject';
-import { API } from 'mobx-model/src/index';
+import { API } from 'mobx-model';
 
 const request = API.request;
 const jsonApiHeaders = {
