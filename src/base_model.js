@@ -1,6 +1,61 @@
+import { transaction } from 'mobx-model/node_modules/mobx';
+import isArray from 'mobx-model/node_modules/lodash/isArray';
+import camelcaseKeys from 'camelcase-object';
+import { singularize } from 'mobx-model/node_modules/inflection';
 import { BaseModel } from 'mobx-model';
 
 
+function getAttributesByData ({ id, type, attributes, relationships={} }) {
+  const relationAttrs = Object.keys(relationships).reduce((attrs, key) => {
+    const keyData = relationships[key].data;
+    if (!keyData) return attrs;
+
+    const isMany = isArray(keyData);
+    if (isMany) {
+      attrs[`${singularize(key)}_ids`] = keyData.map(data => data.id|0);
+    } else {
+      attrs[`${key}_id`] = keyData.id|0;
+    }
+
+    return attrs;
+  }, {});
+
+  const camelCaseAttributes  = camelcaseKeys(attributes);
+
+  return { id: id|0, type,  ...camelCaseAttributes, ...relationAttrs }
+}
+
+
+function setModelData ({ data, included=[] }) {
+  const resourceObjects = [].concat(data);
+  const modelsJson = resourceObjects.map(data => getAttributesByData(data));
+  const topLevelJson = included.reduce((json, data) => {
+    const { type } = data;
+
+    if (!json[type]) {
+      json[type] = [];
+    }
+
+    json[type].push(getAttributesByData(data));
+
+    return json;
+  }, {});
+
+  transaction(() => {
+    modelsJson.forEach(modelJson => {
+      this.__setToBaseModel({ modelJson, topLevelJson });
+    });
+  });
+
+}
+
+
+BaseModel.addClassAction('__setToBaseModel', BaseModel.set);
+BaseModel.addAction('__setToBaseModel', BaseModel.prototype.set);
+
+
+BaseModel.addClassAction('setFromJsonApi', setModelData);
+BaseModel.addAction('setFromJsonApi', setModelData);
 
 
 export default BaseModel;
