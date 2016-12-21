@@ -1,6 +1,6 @@
 import { transaction } from 'mobx-model/node_modules/mobx';
 import isArray from 'mobx-model/node_modules/lodash/isArray';
-import camelcaseKeys from 'camelcase-object';
+import { camelize } from 'inflection';
 import { singularize } from 'mobx-model/node_modules/inflection';
 import { BaseModel } from 'mobx-model';
 
@@ -20,7 +20,12 @@ function getAttributesByData ({ id, type, attributes, relationships={} }) {
     return attrs;
   }, {});
 
-  const camelCaseAttributes  = camelcaseKeys(attributes);
+  const camelCaseAttributes  = Object.keys(attributes).reduce((memo, attr) => {
+    memo[camelize(attr, true)] = attributes[attr];
+    return memo;
+  }, {});
+
+  //console.log('-->', camelCaseAttributes);
 
   return { id: id|0, type,  ...camelCaseAttributes, ...relationAttrs }
 }

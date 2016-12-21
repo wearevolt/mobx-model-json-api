@@ -8,7 +8,7 @@ const testBody = {
     type: "product_brands",
     attributes: {
       name: "nike",
-      aliases: ["nike", 1917, "FooBar"],
+      alias_names: ["nike", 1917, "FooBar"],
     },
   }
 };
@@ -18,7 +18,7 @@ class TestModel extends BaseModel {
 
   static attributes = {
     name: '',
-    aliases: null,
+    aliasNames: null,
   };
 
   static relations = [];
@@ -40,9 +40,7 @@ describe('Issue #1 Incorrect set value into array typed attribute', () => {
     const testModel = TestModel.get(68);
 
     expect(!!testModel).to.equal(true);
-    expect(testModel.aliases.slice()).to.equal(testBody.data.attributes.aliases);
-
-    console.log('--->', brandModel.aliases.slice());
+    expect(testModel.aliasNames.slice()).to.deep.equal(testBody.data.attributes.alias_names);
   });
 
 });

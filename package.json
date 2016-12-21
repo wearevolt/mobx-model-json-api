@@ -22,7 +22,7 @@
   "author": "Alexander \"Staltec\" Prozorov",
   "license": "MIT",
   "dependencies": {
-    "camelcase-object": "^1.0.0",
+    "inflection": "^1.10.0",
     "mobx-model": "^0.0.28"
   },
   "devDependencies": {

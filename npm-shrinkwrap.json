@@ -1,23 +1,11 @@
 {
   "name": "mobx-model-json-api",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "dependencies": {
-    "camelcase-object": {
-      "version": "1.0.0",
-      "from": "camelcase-object@latest",
-      "resolved": "https://registry.npmjs.org/camelcase-object/-/camelcase-object-1.0.0.tgz",
-      "dependencies": {
-        "camelcase": {
-          "version": "2.1.1",
-          "from": "camelcase@>=2.0.0 <3.0.0",
-          "resolved": "https://registry.npmjs.org/camelcase/-/camelcase-2.1.1.tgz"
-        }
-      }
-    },
-    "map-obj": {
-      "version": "1.0.1",
-      "from": "map-obj@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/map-obj/-/map-obj-1.0.1.tgz"
+    "inflection": {
+      "version": "1.10.0",
+      "from": "inflection@latest",
+      "resolved": "https://registry.npmjs.org/inflection/-/inflection-1.10.0.tgz"
     },
     "mobx-model": {
       "version": "0.0.28",
