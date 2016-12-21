@@ -3,3 +3,4 @@ test/
 webpack.*.js
 .babelrc
 README.md
+.idea

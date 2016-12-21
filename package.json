@@ -1,6 +1,6 @@
 {
   "name": "mobx-model-json-api",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "JSON API usage for mobx-model",
   "main": "lib/index.js",
   "scripts": {
@@ -15,6 +15,10 @@
     "mobx-model",
     "json-api"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wearevolt/mobx-model-json-api.git"
+  },
   "author": "Alexander \"Staltec\" Prozorov",
   "license": "MIT",
   "dependencies": {
