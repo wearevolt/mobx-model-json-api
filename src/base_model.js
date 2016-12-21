@@ -25,8 +25,6 @@ function getAttributesByData ({ id, type, attributes, relationships={} }) {
     return memo;
   }, {});
 
-  //console.log('-->', camelCaseAttributes);
-
   return { id: id|0, type,  ...camelCaseAttributes, ...relationAttrs }
 }
 
