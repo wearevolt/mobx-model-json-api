@@ -55,6 +55,3 @@ function setModelData ({ data, included=[] }) {
 
 BaseModel.addClassAction('setByBody', setModelData);
 BaseModel.addAction('setByBody', setModelData);
-
-
-export default BaseModel;
