@@ -1,6 +1,6 @@
 {
   "name": "mobx-model-json-api",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "JSON API usage for mobx-model",
   "main": "lib/index.js",
   "scripts": {
@@ -22,8 +22,8 @@
   "author": "Alexander \"Staltec\" Prozorov",
   "license": "MIT",
   "dependencies": {
-    "inflection": "^1.10.0",
-    "mobx-model": "0.0.30"
+    "inflection": "1.10.0",
+    "mobx-model": "0.0.31"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
