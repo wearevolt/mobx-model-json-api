@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import BaseModel from '../../src/base_model';
+import BaseModel from '../../lib/base_model';
 
 
 const testBody = {
@@ -20,8 +20,6 @@ class TestModel extends BaseModel {
     name: '',
     aliasNames: null,
   };
-
-  static relations = [];
 
 }
 

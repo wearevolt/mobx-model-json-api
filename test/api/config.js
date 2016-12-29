@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import isFunction from 'mobx-model/node_modules/lodash/isFunction';
 
-import API from '../../src/api';
+import API from '../../lib/api';
 
 
 describe('config', () => {

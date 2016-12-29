@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import isFunction from 'mobx-model/node_modules/lodash/isFunction';
 import superagent from 'superagent';
 import mock from 'superagent-mocker';
-import API from '../../src/api';
+import API from '../../lib/api';
 
 
 const API_ROOT = 'http://test.domain.com';

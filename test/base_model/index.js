@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import BaseModel from '../../src/base_model';
+import BaseModel from '../../lib/base_model';
 import isFunction from 'mobx-model/node_modules/lodash/isFunction';
 
 
@@ -9,8 +9,6 @@ class TestModel extends BaseModel {
     name: '',
     aliases: null,
   };
-
-  static relations = [];
 
 }
 
