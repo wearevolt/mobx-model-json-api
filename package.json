@@ -1,6 +1,6 @@
 {
   "name": "mobx-model-json-api",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "JSON API usage for mobx-model",
   "main": "lib/index.js",
   "scripts": {
