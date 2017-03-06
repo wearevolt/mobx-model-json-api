@@ -1,6 +1,6 @@
 {
   "name": "mobx-model-json-api",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "dependencies": {
     "inflection": {
       "version": "1.10.0",
@@ -8,9 +8,9 @@
       "resolved": "https://registry.npmjs.org/inflection/-/inflection-1.10.0.tgz"
     },
     "mobx-model": {
-      "version": "0.0.30",
-      "from": "mobx-model@0.0.30",
-      "resolved": "https://registry.npmjs.org/mobx-model/-/mobx-model-0.0.30.tgz",
+      "version": "0.0.31",
+      "from": "mobx-model@0.0.31",
+      "resolved": "https://registry.npmjs.org/mobx-model/-/mobx-model-0.0.31.tgz",
       "dependencies": {
         "async": {
           "version": "1.5.2",
