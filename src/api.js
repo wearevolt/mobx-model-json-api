@@ -1,6 +1,6 @@
-import isString from 'mobx-model/node_modules/lodash/isString';
-import isArray from 'mobx-model/node_modules/lodash/isArray';
-import isPlainObject from 'mobx-model/node_modules/lodash/isPlainObject';
+import isString from 'lodash/isString';
+import isArray from 'lodash/isArray';
+import isPlainObject from 'lodash/isPlainObject';
 import { API } from 'mobx-model';
 
 const request = API.request;

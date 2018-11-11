@@ -1,6 +1,6 @@
-import { transaction } from 'mobx-model/node_modules/mobx';
-import isArray from 'mobx-model/node_modules/lodash/isArray';
-import { singularize } from 'mobx-model/node_modules/inflection';
+import { transaction } from 'mobx';
+import isArray from 'lodash/isArray';
+import { singularize } from 'inflection';
 import { BaseModel } from 'mobx-model';
 
 function minesToLodash(str) {
