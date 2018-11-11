@@ -23,9 +23,9 @@ function getRelationAttributes(relationships = {}) {
 
     const isMany = isArray(dataByKey);
     if (isMany) {
-      attrs[`${singularize(jsonKey)}_ids`] = dataByKey.map(data => data.id | 0);
+      attrs[`${singularize(jsonKey)}_ids`] = dataByKey.map(data => data.id);
     } else {
-      attrs[`${jsonKey}_id`] = dataByKey.id | 0;
+      attrs[`${jsonKey}_id`] = dataByKey.id;
     }
 
     return attrs;
